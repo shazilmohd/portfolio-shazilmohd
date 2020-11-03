@@ -1,4 +1,6 @@
 FROM ubuntu:latest
+ENV TZ-Asia/Kolkata
+RUN ln -snf /user/share/zoneinfo/$TZ etc/localtime "echo $TZ > /etc/timezone
 RUN apt-get update && apt-get -y install apache2
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 RUN mkdir -p /code
