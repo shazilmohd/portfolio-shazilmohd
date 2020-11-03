@@ -1,5 +1,6 @@
 FROM ubuntu:latest
 RUN apt-get update && apt-get -y install apache2
+RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
 RUN mkdir -p /code
 WORKDIR code
 COPY . code
